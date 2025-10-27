@@ -1,10 +1,13 @@
+import { LoginNav, SignupPage } from '@/components';
+import MultiLevelDropdown from '@/components/Dropdown';
 import React from 'react';
 
 function index() {
   return (
     <div>
-      <h1>Signup</h1>
-      <p>dsfwedsfwefsd</p>
+      <LoginNav />
+      <SignupPage />
+      <MultiLevelDropdown />
     </div>
   );
 }

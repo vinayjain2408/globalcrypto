@@ -55,3 +55,22 @@ export const CryptoPurchasePage = loadable(
     fallback: <Loading />,
   },
 );
+
+export const LoginPage = loadable(() => import('./LoginPage'), {
+  fallback: <Loading />,
+});
+export const LoginNav = loadable(() => import('./LoginNav'), {
+  fallback: <Loading />,
+});
+export const SignupPage = loadable(() => import('./SignupPage'), {
+  fallback: <Loading />,
+});
+export const SidebarNav = loadable(() => import('./SidebarNav'), {
+  fallback: <Loading />,
+});
+export const CryptoListScreen = loadable(() => import('./CryptoListScreen'), {
+  fallback: <Loading />,
+});
+export const Dropdown = loadable(() => import('./Dropdown'), {
+  fallback: <Loading />,
+});

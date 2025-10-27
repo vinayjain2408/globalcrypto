@@ -5,6 +5,8 @@ import {
   FaqSection,
   Footer,
   Hero,
+  SidebarNav,
+  CryptoListScreen,
   Navbar,
   Stats,
   // WhyGlobalCrypto,
@@ -20,9 +22,10 @@ function index() {
       <CryptoPortfolio />
       <CryptoInvestmentSection />
       <BitcoinLandingSection />
-      {/* <WhyGlobalCrypto /> */}
       <FaqSection />
+      <CryptoListScreen />
       <Footer />
+      <SidebarNav />
     </div>
   );
 }

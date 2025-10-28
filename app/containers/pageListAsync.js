@@ -31,3 +31,6 @@ export const Signup = loadable(() => import('./Signup'), {
 export const Invest = loadable(() => import('./Invest'), {
   fallback: <Loading />,
 });
+// export const SafeSection = loadable(() => import('./SafeSection'), {
+//   fallback: <Loading />,
+// });

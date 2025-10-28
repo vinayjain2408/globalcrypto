@@ -68,9 +68,9 @@ export const SignupPage = loadable(() => import('./SignupPage'), {
 export const SidebarNav = loadable(() => import('./SidebarNav'), {
   fallback: <Loading />,
 });
-export const CryptoListScreen = loadable(() => import('./CryptoListScreen'), {
+export const Dropdown = loadable(() => import('./Dropdown'), {
   fallback: <Loading />,
 });
-export const Dropdown = loadable(() => import('./Dropdown'), {
+export const TradingDashboard = loadable(() => import('./TradingDashboard'), {
   fallback: <Loading />,
 });

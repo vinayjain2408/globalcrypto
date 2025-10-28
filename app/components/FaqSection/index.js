@@ -62,9 +62,9 @@ export default function FaqSection() {
               >
                 <span className="font-medium text-[17px]">{faq.question}</span>
                 {openIndex === index ? (
-                  <Minus className="w-5 h-5 text-gray-100" />
+                  <Minus className="w-5 h-5 text-blue" />
                 ) : (
-                  <Plus className="w-5 h-5 text-gray-100" />
+                  <Plus className="w-5 h-5 text-blue" />
                 )}
               </button>
               {openIndex === index && faq.answer && (

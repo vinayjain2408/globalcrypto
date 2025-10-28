@@ -6,9 +6,9 @@ import {
   Footer,
   Hero,
   SidebarNav,
-  CryptoListScreen,
   Navbar,
   Stats,
+  TradingDashboard,
   // WhyGlobalCrypto,
 } from '@/components';
 import React from 'react';
@@ -23,9 +23,10 @@ function index() {
       <CryptoInvestmentSection />
       <BitcoinLandingSection />
       <FaqSection />
-      <CryptoListScreen />
+      {/* <SafeSection /> */}
       <Footer />
       <SidebarNav />
+      <TradingDashboard />
     </div>
   );
 }

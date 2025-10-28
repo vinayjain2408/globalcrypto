@@ -49,9 +49,9 @@ export default function Navbar() {
       <img src="/images/logo.png" alt="logo" className="h-10" />
 
       {/* Nav Links */}
-      <ul className="flex justify-center items-center space-x-6">
+      <ul className="border border-[#4965d2] flex justify-center items-center space-x-5 rounded-3xl p-2">
         <li
-          className="text-[#4965D2] font-medium relative cursor-pointer"
+          className="text-[#4965D2] relative cursor-pointer"
           onMouseEnter={() => setShowInvest(true)}
           onMouseLeave={() => setShowInvest(false)}
         >
@@ -64,8 +64,8 @@ export default function Navbar() {
               onMouseLeave={() => setShowInvest(false)}
             >
               {/* Left Column */}
-              <div className="w-1/2 border-r pr-6">
-                <h3 className="font-bold text-primary-100 mb-3">INVEST IN:</h3>
+              <div className="w-6/2 border-r pr-6">
+                {/* <h3 className="font-bold text-primary-100 mb-3">INVEST IN:</h3> */}
                 <ul className="space-y-2">
                   {investItems.map((item, idx) => (
                     <li
@@ -77,7 +77,7 @@ export default function Navbar() {
                     >
                       <div>{item.icon}</div>
                       <div className="ml-2">
-                        <p className="font-semibold text-sm text-primary-100">
+                        <p className="font-semibold text-s text-primary-100">
                           {item.title}
                         </p>
                         <p className="text-xs text-gray-500">{item.desc}</p>
@@ -88,7 +88,7 @@ export default function Navbar() {
               </div>
 
               {/* Right Column */}
-              <div className="w-1/2">
+              <div className="w-1/2 mt-6">
                 {activeItem === 'Cryptocurrencies' ? (
                   <>
                     <h3 className="font-bold text-primary-100 mb-3">
@@ -98,11 +98,11 @@ export default function Navbar() {
                       {topCryptos.map((coin, i) => (
                         <li
                           key={i}
-                          className="flex justify-between items-center text-sm"
+                          className="flex justify-between items-center text-s"
                         >
                           <span className={`flex items-center space-x-2`}>
                             <div
-                              className={`w-2 h-2 rounded-full ${coin.color}`}
+                              className={`w-4 h-4 rounded-full ${coin.color}`}
                             ></div>
                             <span>{coin.name}</span>
                           </span>
@@ -153,33 +153,33 @@ export default function Navbar() {
 
 // export default function Navbar() {
 //   return (
-//     <nav className="flex justify-between items-center py-4 px-9 bg-[#FFFFFF] text-white">
-//       {/* <div className="text-xl font-bold">GLOBAL CRYPTO</div> */}
-//       <img src="/images/logo.png" alt="logo" />
-//       <ul className="border border-[#4965d2] flex justify-center items-center space-x-5 rounded-3xl p-2">
-//         <li className="text-[#4965D2] cursor-rounded-full bg-white px-4 py-1">
-//           Invest
-//         </li>
-//         <li className="text-[#4965D2] cursor-pointer">
-//           Trading
-//           <button className="border border-[#E0D607] text-xs bg-[#E0D607] text-[#FFFFFF] rounded-full ml-1 px-1 py-0 font-semibold">
-//             New
-//           </button>
-//         </li>
-//         <li className="text-[#4965d2] cursor-pointer ">PMS</li>
-//         <li className="text-[#4965D2] cursor-pointer ">Experts Pick</li>
-//         <li className="text-[#4965d2] cursor-pointer ">Blogs</li>
-//         <li className="text-[#4965d2] cursor-pointer ">About</li>
-//         <li></li>
-//       </ul>
-//       <div className="space-x-4">
-//         <button className="border border-[#4965D2] rounded-full px-6 py-1 text-[#4965D2] font-semibold">
-//           Log in
-//         </button>
-//         <button className="border border-[#4965D2] bg-[#4965D2] text-[#FFFFFF] rounded-full px-6 py-1 font-semibold">
-//           Sign up
-//         </button>
-//       </div>
-//     </nav>
+// <nav className="flex justify-between items-center py-4 px-9 bg-[#FFFFFF] text-white">
+//   {/* <div className="text-xl font-bold">GLOBAL CRYPTO</div> */}
+//   <img src="/images/logo.png" alt="logo" />
+//   <ul className="border border-[#4965d2] flex justify-center items-center space-x-5 rounded-3xl p-2">
+// <li className="text-[#4965D2] cursor-rounded-full bg-white px-4 py-1">
+//   Invest
+// </li>
+//     <li className="text-[#4965D2] cursor-pointer">
+//       Trading
+//       <button className="border border-[#E0D607] text-xs bg-[#E0D607] text-[#FFFFFF] rounded-full ml-1 px-1 py-0 font-semibold">
+//         New
+//       </button>
+//     </li>
+//     <li className="text-[#4965d2] cursor-pointer ">PMS</li>
+//     <li className="text-[#4965D2] cursor-pointer ">Experts Pick</li>
+//     <li className="text-[#4965d2] cursor-pointer ">Blogs</li>
+//     <li className="text-[#4965d2] cursor-pointer ">About</li>
+//     <li></li>
+//   </ul>
+//   <div className="space-x-4">
+//     <button className="border border-[#4965D2] rounded-full px-6 py-1 text-[#4965D2] font-semibold">
+//       Log in
+//     </button>
+//     <button className="border border-[#4965D2] bg-[#4965D2] text-[#FFFFFF] rounded-full px-6 py-1 font-semibold">
+//       Sign up
+//     </button>
+//   </div>
+// </nav>
 //   );
 // }

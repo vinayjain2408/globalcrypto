@@ -269,20 +269,3 @@
   user-select: none;
   overflow: hidden;
 }
-
-.react-datepicker__close-icon {
-  display: none;
-}
-
-.Toastify__toast-icon {
-  display: none;
-}
-
-.zsiq-flexM .zsiq-iflexM .zsiq-float {
-  position: absolute !important;
-  bottom: 8rem !important;
-}
-#zsiq_float {
-  position: absolute !important;
-  bottom: 8rem !important;
-}

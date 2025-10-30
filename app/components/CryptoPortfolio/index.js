@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const categories = ['Popular', 'Rewards', 'Stablecoins', 'Newly listed'];
 
@@ -19,7 +19,7 @@ const cryptos = [
 ];
 
 const CryptoPortfolio = () => {
-  const [activeCategory, setActiveCategory] = useState('Popular');
+  // const [activeCategory, setActiveCategory] = useState('Popular');
 
   return (
     <div className="bg-[#FFFFFF] flex flex-col items-center text-white px-4 py-10 ">
@@ -28,20 +28,22 @@ const CryptoPortfolio = () => {
       </h1>
 
       {/* Category Tabs */}
-      <div className="flex gap-3 mb-4 rounded-sm px-2 py-2">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-              activeCategory === cat
-                ? 'border bg-[#4965D2] font-semibold text-[#FFFFFF] '
-                : 'border bg-[#686B821F] text-[#4965d2] font-semibold'
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
+      <div className="flex justify-center mb-8 sm:mb-12">
+        <div className="flex space-x-2 p-1 bg-[#686B821F] rounded-full shadow-lg">
+          {categories.map((category, index) => (
+            <button
+              key={category}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200
+                  ${
+                    index === 0
+                      ? 'bg-[#4965D2] text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-100'
+                  }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Crypto Cards */}

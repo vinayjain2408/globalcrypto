@@ -22,7 +22,7 @@ const CryptoPortfolio = () => {
   const [activeCategory, setActiveCategory] = useState('Popular');
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] flex flex-col items-center text-white px-4 py-10 ">
+    <div className="bg-[#FFFFFF] flex flex-col items-center text-white px-4 py-10 ">
       <h1 className="text-4xl text-[#4965d2] font-bold mb-6 text-center ">
         Build your crypto portfolio
       </h1>
@@ -45,11 +45,11 @@ const CryptoPortfolio = () => {
       </div>
 
       {/* Crypto Cards */}
-      <div className="grid grid-cols-1 py-1 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-7 gap-2 max-w-6xl mx-auto mt-10">
+      <div className="grid grid-cols-1 py-1 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-7 gap-2 mx-auto mt-10">
         {cryptos.map((coin) => (
           <div
             key={coin.symbol}
-            className="rounded-lg px-1 py-1 shadow-md transition-all border border bg-[#4965D2] flex items-center space-x-3"
+            className="rounded-lg px-1 py-1 shadow-md transition-all border bg-[#4965D2] flex items-center space-x-3"
           >
             <img
               src="/images/coins1.png"

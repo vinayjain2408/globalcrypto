@@ -9,29 +9,47 @@ export default function Navbar() {
   const investItems = [
     {
       title: 'Cryptocurrencies',
-      icon: <FaBitcoin className="text-[#4965D2] text-lg" />,
+      icon: <FaBitcoin className="text-[#4965D2] text-lg h-8 w-8" />,
       submenu: [
-        { name: 'Bitcoin', icon: <FaBitcoin className="text-orange-400" /> },
-        { name: 'Ethereum', icon: <FaChartLine className="text-gray-500" /> },
-        { name: 'Solana', icon: <FaCoins className="text-purple-500" /> },
-        { name: 'Dogecoin', icon: <FaCoins className="text-yellow-500" /> },
-        { name: 'Shibu Inu', icon: <FaCoins className="text-red-500" /> },
-        { name: 'XRP', icon: <FaCoins className="text-black" /> },
-        { name: 'Vision', icon: <FaCoins className="text-green-500" /> },
+        {
+          name: 'Bitcoin',
+          icon: <FaBitcoin className="text-orange-400 h-8 w-8" />,
+        },
+        {
+          name: 'Ethereum',
+          icon: <FaChartLine className="text-gray-500 h-8 w-8" />,
+        },
+        {
+          name: 'Solana',
+          icon: <FaCoins className="text-purple-500 h-8 w-8" />,
+        },
+        {
+          name: 'Dogecoin',
+          icon: <FaCoins className="text-yellow-500 h-8 w-8" />,
+        },
+        {
+          name: 'Shibu Inu',
+          icon: <FaCoins className="text-red-500 h-8 w-8" />,
+        },
+        { name: 'XRP', icon: <FaCoins className="text-black h-8 w-8" /> },
+        {
+          name: 'Vision',
+          icon: <FaCoins className="text-green-500 h-8 w-8" />,
+        },
       ],
     },
     {
       title: 'ETFs*',
-      icon: <FaChartLine className="text-[#4965D2] text-lg" />,
+      icon: <FaChartLine className="text-[#4965D2] text-lg h-8 w-8" />,
     },
     {
       title: 'Leverage',
-      icon: <MdTrendingUp className="text-[#4965D2] text-lg" />,
+      icon: <MdTrendingUp className="text-[#4965D2] text-lg h-8 w-8" />,
     },
     {
       title: 'Crypto Indices',
       desc: "The World's First Real Crypto Index",
-      icon: <FaLayerGroup className="text-[#4965D2] text-lg" />,
+      icon: <FaLayerGroup className="text-[#4965D2] text-lg h-8 w-8" />,
     },
   ];
 
@@ -64,10 +82,12 @@ export default function Navbar() {
                   <div className="px-4 py-2 hover:bg-gray-50 flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       {item.icon}
-                      <span>{item.title}</span>
+                      <span className="text-gray-700 text-lg font-medium">
+                        {item.title}
+                      </span>
                     </div>
                     {item.submenu && (
-                      <span className="text-sm opacity-60">›</span>
+                      <span className="opacity-60 text-lg">›</span>
                     )}
                   </div>
 
@@ -80,7 +100,7 @@ export default function Navbar() {
                           className="px-4 py-2 hover:bg-gray-50 flex items-center gap-3"
                         >
                           {sub.icon}
-                          <span className="text-gray-700 text-[14px]">
+                          <span className="text-gray-700 text-lg font-medium">
                             {sub.name}
                           </span>
                         </div>

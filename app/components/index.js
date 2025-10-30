@@ -68,9 +68,27 @@ export const SignupPage = loadable(() => import('./SignupPage'), {
 export const SidebarNav = loadable(() => import('./SidebarNav'), {
   fallback: <Loading />,
 });
-export const CryptoListScreen = loadable(() => import('./CryptoListScreen'), {
-  fallback: <Loading />,
-});
 export const Dropdown = loadable(() => import('./Dropdown'), {
   fallback: <Loading />,
 });
+export const TradingDashboard = loadable(() => import('./TradingDashboard'), {
+  fallback: <Loading />,
+});
+export const BitcoinConversionTable = loadable(
+  () => import('./BitcoinConversionTable'),
+  {
+    fallback: <Loading />,
+  },
+);
+export const AboutBitcoin = loadable(() => import('./AboutBitcoin'), {
+  fallback: <Loading />,
+});
+// export const RelatedCryptocurrencies = loadable(
+//   () => import('./RelatedCryptocurrencies'),
+//   {
+//     fallback: <Loading />,
+//   },
+// );
+// export const Features = loadable(() => import('./Features'), {
+//   fallback: <Loading />,
+// });

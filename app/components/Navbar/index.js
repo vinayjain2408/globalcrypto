@@ -59,7 +59,7 @@ export default function Navbar() {
       <img src="/images/logo.png" alt="logo" className="h-10" />
 
       {/* Nav Links */}
-      <ul className="flex items-center space-x-8 font-medium text-[15px]">
+      <ul className="border border-[#4965d2] flex justify-center items-center space-x-5 rounded-3xl p-2">
         {/* INVEST */}
         <li
           className="relative cursor-pointer"
@@ -145,33 +145,33 @@ export default function Navbar() {
 
 // export default function Navbar() {
 //   return (
-//     <nav className="flex justify-between items-center py-4 px-9 bg-[#FFFFFF] text-white">
-//       {/* <div className="text-xl font-bold">GLOBAL CRYPTO</div> */}
-//       <img src="/images/logo.png" alt="logo" />
-//       <ul className="border border-[#4965d2] flex justify-center items-center space-x-5 rounded-3xl p-2">
-//         <li className="text-[#4965D2] cursor-rounded-full bg-white px-4 py-1">
-//           Invest
-//         </li>
-//         <li className="text-[#4965D2] cursor-pointer">
-//           Trading
-//           <button className="border border-[#E0D607] text-xs bg-[#E0D607] text-[#FFFFFF] rounded-full ml-1 px-1 py-0 font-semibold">
-//             New
-//           </button>
-//         </li>
-//         <li className="text-[#4965d2] cursor-pointer ">PMS</li>
-//         <li className="text-[#4965D2] cursor-pointer ">Experts Pick</li>
-//         <li className="text-[#4965d2] cursor-pointer ">Blogs</li>
-//         <li className="text-[#4965d2] cursor-pointer ">About</li>
-//         <li></li>
-//       </ul>
-//       <div className="space-x-4">
-//         <button className="border border-[#4965D2] rounded-full px-6 py-1 text-[#4965D2] font-semibold">
-//           Log in
-//         </button>
-//         <button className="border border-[#4965D2] bg-[#4965D2] text-[#FFFFFF] rounded-full px-6 py-1 font-semibold">
-//           Sign up
-//         </button>
-//       </div>
-//     </nav>
+// <nav className="flex justify-between items-center py-4 px-9 bg-[#FFFFFF] text-white">
+//   {/* <div className="text-xl font-bold">GLOBAL CRYPTO</div> */}
+//   <img src="/images/logo.png" alt="logo" />
+//   <ul className="border border-[#4965d2] flex justify-center items-center space-x-5 rounded-3xl p-2">
+// <li className="text-[#4965D2] cursor-rounded-full bg-white px-4 py-1">
+//   Invest
+// </li>
+//     <li className="text-[#4965D2] cursor-pointer">
+//       Trading
+//       <button className="border border-[#E0D607] text-xs bg-[#E0D607] text-[#FFFFFF] rounded-full ml-1 px-1 py-0 font-semibold">
+//         New
+//       </button>
+//     </li>
+//     <li className="text-[#4965d2] cursor-pointer ">PMS</li>
+//     <li className="text-[#4965D2] cursor-pointer ">Experts Pick</li>
+//     <li className="text-[#4965d2] cursor-pointer ">Blogs</li>
+//     <li className="text-[#4965d2] cursor-pointer ">About</li>
+//     <li></li>
+//   </ul>
+//   <div className="space-x-4">
+//     <button className="border border-[#4965D2] rounded-full px-6 py-1 text-[#4965D2] font-semibold">
+//       Log in
+//     </button>
+//     <button className="border border-[#4965D2] bg-[#4965D2] text-[#FFFFFF] rounded-full px-6 py-1 font-semibold">
+//       Sign up
+//     </button>
+//   </div>
+// </nav>
 //   );
 // }

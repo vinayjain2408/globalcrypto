@@ -1,147 +1,119 @@
 import React, { useState } from 'react';
-import {
-  FaBitcoin,
-  FaBriefcase,
-  FaLayerGroup,
-  FaExchangeAlt,
-} from 'react-icons/fa';
+import { FaBitcoin, FaChartLine, FaCoins, FaLayerGroup } from 'react-icons/fa';
+import { MdTrendingUp } from 'react-icons/md';
 
 export default function Navbar() {
-  const [showInvest, setShowInvest] = useState(false);
-  const [activeItem, setActiveItem] = useState('Cryptocurrencies');
+  const [openMenu, setOpenMenu] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(false);
 
   const investItems = [
     {
       title: 'Cryptocurrencies',
-      desc: 'Buy, sell & swap cryptocurrencies',
-      icon: <FaBitcoin className="text-primary-100 text-xl" />,
+      icon: <FaBitcoin className="text-[#4965D2] text-lg" />,
+      submenu: [
+        { name: 'Bitcoin', icon: <FaBitcoin className="text-orange-400" /> },
+        { name: 'Ethereum', icon: <FaChartLine className="text-gray-500" /> },
+        { name: 'Solana', icon: <FaCoins className="text-purple-500" /> },
+        { name: 'Dogecoin', icon: <FaCoins className="text-yellow-500" /> },
+        { name: 'Shibu Inu', icon: <FaCoins className="text-red-500" /> },
+        { name: 'XRP', icon: <FaCoins className="text-black" /> },
+        { name: 'Vision', icon: <FaCoins className="text-green-500" /> },
+      ],
     },
     {
       title: 'ETFs*',
-      desc: 'Invest in ETFs 24/7',
-      icon: <FaBriefcase className="text-primary-100 text-xl" />,
+      icon: <FaChartLine className="text-[#4965D2] text-lg" />,
     },
     {
       title: 'Leverage',
-      desc: 'Go Long or Short on top cryptocurrencies',
-      icon: <FaExchangeAlt className="text-primary-100 text-xl" />,
+      icon: <MdTrendingUp className="text-[#4965D2] text-lg" />,
     },
     {
       title: 'Crypto Indices',
-      desc: "The world's first real crypto index",
-      icon: <FaLayerGroup className="text-primary-100 text-xl" />,
+      desc: "The World's First Real Crypto Index",
+      icon: <FaLayerGroup className="text-[#4965D2] text-lg" />,
     },
   ];
 
-  const topCryptos = [
-    { name: 'Bitcoin', symbol: 'BTC', color: 'text-orange-500' },
-    { name: 'Ethereum', symbol: 'ETH', color: 'text-gray-500' },
-    { name: 'Solana', symbol: 'SOL', color: 'text-purple-500' },
-    { name: 'Dogecoin', symbol: 'DOGE', color: 'text-yellow-500' },
-    { name: 'Shiba Inu', symbol: 'SHIB', color: 'text-red-500' },
-    { name: 'XRP', symbol: 'XRP', color: 'text-black' },
-    { name: 'Vision', symbol: 'VSN', color: 'text-green-600' },
-  ];
-
   return (
-    <nav className="relative flex justify-between items-center py-4 px-9 bg-white shadow-md">
+    <nav className="bg-white text-[#4965D2] px-10 py-3 flex items-center justify-between shadow-md relative">
       {/* Logo */}
       <img src="/images/logo.png" alt="logo" className="h-10" />
 
       {/* Nav Links */}
       <ul className="border border-[#4965d2] flex justify-center items-center space-x-5 rounded-3xl p-2">
+        {/* INVEST */}
         <li
-          className="text-[#4965D2] relative cursor-pointer"
-          onMouseEnter={() => setShowInvest(true)}
-          onMouseLeave={() => setShowInvest(false)}
+          className="relative cursor-pointer"
+          onMouseEnter={() => setOpenMenu(true)}
+          onMouseLeave={() => {
+            setOpenMenu(false);
+            setOpenSubmenu(false);
+          }}
         >
           Invest
-          {/* Dropdown */}
-          {showInvest && (
-            <div
-              className="absolute top-6 left-0 bg-white text-black shadow-lg rounded-lg py-6 px-4 flex space-x-12 w-[600px] z-50"
-              onMouseEnter={() => setShowInvest(true)}
-              onMouseLeave={() => setShowInvest(false)}
-            >
-              {/* Left Column */}
-              <div className="w-6/2 border-r pr-6">
-                {/* <h3 className="font-bold text-primary-100 mb-3">INVEST IN:</h3> */}
-                <ul className="space-y-2">
-                  {investItems.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className={`flex items-center p-2 rounded-md cursor-pointer ${
-                        activeItem === item.title ? 'bg-gray-100' : ''
-                      }`}
-                      onMouseEnter={() => setActiveItem(item.title)}
-                    >
-                      <div>{item.icon}</div>
-                      <div className="ml-2">
-                        <p className="font-semibold text-s text-primary-100">
-                          {item.title}
-                        </p>
-                        <p className="text-xs text-gray-500">{item.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Right Column */}
-              <div className="w-1/2 mt-6">
-                {activeItem === 'Cryptocurrencies' ? (
-                  <>
-                    <h3 className="font-bold text-primary-100 mb-3">
-                      TOP CRYPTOCURRENCIES:
-                    </h3>
-                    <ul className="space-y-2">
-                      {topCryptos.map((coin, i) => (
-                        <li
-                          key={i}
-                          className="flex justify-between items-center text-s"
-                        >
-                          <span className={`flex items-center space-x-2`}>
-                            <div
-                              className={`w-4 h-4 rounded-full ${coin.color}`}
-                            ></div>
-                            <span>{coin.name}</span>
-                          </span>
-                          <span className="text-gray-400">{coin.symbol}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-primary-100 text-xs mt-4 cursor-pointer font-semibold">
-                      See all Cryptocurrencies
-                    </p>
-                  </>
-                ) : (
-                  <div className="flex justify-center items-center h-full text-gray-400 text-sm">
-                    Hover “Cryptocurrencies” to view details
+          {openMenu && (
+            <div className="absolute left-0 top-7 bg-white rounded-xl shadow-lg py-4 w-56 z-50">
+              {investItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative group"
+                  onMouseEnter={() => setOpenSubmenu(item.title)}
+                  onMouseLeave={() => setOpenSubmenu(false)}
+                >
+                  <div className="px-4 py-2 hover:bg-gray-50 flex justify-between items-center">
+                    <div className="flex items-center gap-3">
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </div>
+                    {item.submenu && (
+                      <span className="text-sm opacity-60">›</span>
+                    )}
                   </div>
-                )}
-              </div>
+
+                  {/* Submenu (right side slightly down) */}
+                  {item.submenu && openSubmenu === item.title && (
+                    <div className="absolute left-[220px] top-[10px] bg-white shadow-lg rounded-xl py-3 w-56 z-50">
+                      {item.submenu.map((sub, i) => (
+                        <div
+                          key={i}
+                          className="px-4 py-2 hover:bg-gray-50 flex items-center gap-3"
+                        >
+                          {sub.icon}
+                          <span className="text-gray-700 text-[14px]">
+                            {sub.name}
+                          </span>
+                        </div>
+                      ))}
+                      <div className="border-t mt-2 pt-2 text-center text-[13px] text-[#4965D2] font-semibold cursor-pointer hover:underline">
+                        See All Cryptocurrencies
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           )}
         </li>
 
-        <li className="text-[#4965D2] cursor-pointer">
+        <li className="relative cursor-pointer">
           Trading
-          <button className="border border-[#E0D607] text-xs bg-[#E0D607] text-white rounded-full ml-1 px-1 py-[1px] font-semibold">
+          <span className="ml-1 text-[10px] bg-[#E0D607] text-white px-2 py-[1px] rounded-full font-semibold">
             New
-          </button>
+          </span>
         </li>
-        <li className="text-[#4965D2] cursor-pointer">PMS</li>
-        <li className="text-[#4965D2] cursor-pointer">Experts Pick</li>
-        <li className="text-[#4965D2] cursor-pointer">Blogs</li>
-        <li className="text-[#4965D2] cursor-pointer">About</li>
+        <li className="cursor-pointer">PMS</li>
+        <li className="cursor-pointer">Experts Pick</li>
+        <li className="cursor-pointer">Blogs</li>
+        <li className="cursor-pointer">About</li>
       </ul>
 
       {/* Buttons */}
       <div className="space-x-3">
-        <button className="border border-[#4965D2] rounded-full px-5 py-1 text-[#4965D2] font-semibold">
+        <button className="border border-[#4965D2] rounded-full px-5 py-[6px] font-semibold text-[#4965D2] hover:bg-[#f6f7ff] transition">
           Log in
         </button>
-        <button className="border border-[#4965D2] bg-[#4965D2] text-white rounded-full px-5 py-1 font-semibold">
+        <button className="border border-[#4965D2] bg-[#4965D2] text-white rounded-full px-5 py-[6px] font-semibold hover:bg-[#3f55b5] transition">
           Sign up
         </button>
       </div>

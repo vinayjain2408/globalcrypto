@@ -4,71 +4,51 @@ import React from 'react';
 // eslint-disable-next-line react/prop-types
 const HandHoldingCoinIcon = ({ className = 'w-10 h-10 md:w-12 md:h-12' }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    {/* Hand shape matching the image */}
-    <path d="M12 11c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zM12 11h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2m0-6v-2m0 2c0-2-2-4-4-4h-2a2 2 0 0 0-2 2v4M12 11v-3.5a2.5 2.5 0 0 0-2.5-2.5h-3" />
-    <path d="M16 11c0-2-2-4-4-4" />
-    {/* Coin within the hand, simplified */}
-    <circle cx="12" cy="15" r="2.5" />
-    <path d="M12 12.5v5" />
-    <path d="M10.5 15h3" />
+    <image
+      href="/images/SafeInvestment.png" // <-- your PNG file
+      x="0"
+      y="0"
+      width="24"
+      height="24"
+    />
   </svg>
 );
 
 // eslint-disable-next-line react/prop-types
 const StackWithArrowsIcon = ({ className = 'w-10 h-10 md:w-12 md:h-12' }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    {/* Stack of three coins */}
-    <path d="M5 10a7 3 0 0 0 14 0" />
-    <path d="M5 14a7 3 0 0 0 14 0" />
-    <path d="M5 18a7 3 0 0 0 14 0" />
-    <path d="M5 10v8" />
-    <path d="M19 10v8" />
-
-    {/* Clear upward arrow for growth */}
-    <path d="M12 2l4 4-4 4V2" />
-    <path d="M12 2v8" />
+    <image
+      href="/images/Higher Returns.png" // <-- your PNG file
+      x="0"
+      y="0"
+      width="24"
+      height="24"
+    />
   </svg>
 );
 
 // eslint-disable-next-line react/prop-types
 const WalletIcon = ({ className = 'w-10 h-10 md:w-12 md:h-12' }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    {/* Main wallet body (rectangular) */}
-    <rect x="3" y="7" width="18" height="14" rx="2" ry="2" />
-    {/* Wallet flap/detail */}
-    <path d="M12 7V3" />
-    <path d="M12 7l-5-4" />
-    <path d="M12 7l5-4" />
-    {/* Coin/Card slot inside */}
-    <path d="M19 11H5" />
-    <circle cx="17" cy="16" r="1.5" />
+    <image
+      href="/images/Easy Withdrawal.png" // <-- your PNG file
+      x="0"
+      y="0"
+      width="24"
+      height="24"
+    />
   </svg>
 );
 
@@ -77,20 +57,41 @@ const features = [
   {
     icon: HandHoldingCoinIcon,
     title: 'Safe Investment',
-    description:
-      'Earn higher returns with confidence through our secure and trusted plans.',
+    description: (
+      <>
+        Earn higher returns with confidence
+        <br />
+        secure and through our
+        <br />
+        trusted plans.
+      </>
+    ),
   },
   {
     icon: StackWithArrowsIcon,
     title: 'Higher Returns',
-    description:
-      'Maximize your wealth with our high-return investment opportunities.',
+    description: (
+      <>
+        Maximize your wealth with
+        <br />
+        our high-return investment
+        <br />
+        opportunities
+      </>
+    ),
   },
   {
     icon: WalletIcon,
     title: 'Easy Withdrawal',
-    description:
-      'Withdraw your funds instantly with just a few clicks. Enjoy without any delays.',
+    description: (
+      <>
+        Withdraw your funds instantly
+        <br />
+        with just a few clicks Enjoy
+        <br />
+        without any delays.
+      </>
+    ),
   },
 ];
 
@@ -98,14 +99,14 @@ const features = [
 // eslint-disable-next-line react/prop-types
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="flex flex-col items-center text-center p-6 sm:p-8">
-    <div className="mr-8 text-[#FFFFFF] opacity-90">
+    <div className="mr-8 mb-4 opacity-90">
       {/* Increased icon size class */}
       <Icon className="w-10 h-10 md:w-12 md:h-12" />
     </div>
-    <h3 className=" text-xl mr-8 md:text-2xl font-semibold mb-3 text-[#FFFFFF]">
+    <h3 className=" text-xl mr-6 md:text-2xl font-semibold mb-3 text-[#FFFFFF]">
       {title}
     </h3>
-    <p className=" text-s text-left leading-relaxed max-w-xs mx-auto">
+    <p className=" text-s text-bottom leading-relaxed max-w-xs mx-auto">
       {description}
     </p>
   </div>

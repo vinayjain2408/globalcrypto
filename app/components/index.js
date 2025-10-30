@@ -74,3 +74,21 @@ export const Dropdown = loadable(() => import('./Dropdown'), {
 export const TradingDashboard = loadable(() => import('./TradingDashboard'), {
   fallback: <Loading />,
 });
+export const BitcoinConversionTable = loadable(
+  () => import('./BitcoinConversionTable'),
+  {
+    fallback: <Loading />,
+  },
+);
+export const AboutBitcoin = loadable(() => import('./AboutBitcoin'), {
+  fallback: <Loading />,
+});
+// export const RelatedCryptocurrencies = loadable(
+//   () => import('./RelatedCryptocurrencies'),
+//   {
+//     fallback: <Loading />,
+//   },
+// );
+// export const Features = loadable(() => import('./Features'), {
+//   fallback: <Loading />,
+// });

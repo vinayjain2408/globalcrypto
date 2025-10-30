@@ -9,6 +9,10 @@ import {
   Navbar,
   Stats,
   TradingDashboard,
+  BitcoinConversionTable,
+  AboutBitcoin,
+  // RelatedCryptocurrencies,
+  // Features,
   // WhyGlobalCrypto,
 } from '@/components';
 import React from 'react';
@@ -27,6 +31,10 @@ function index() {
       <Footer />
       <SidebarNav />
       <TradingDashboard />
+      <BitcoinConversionTable />
+      <AboutBitcoin />
+      {/* <RelatedCryptocurrencies />
+      <Features /> */}
     </div>
   );
 }
